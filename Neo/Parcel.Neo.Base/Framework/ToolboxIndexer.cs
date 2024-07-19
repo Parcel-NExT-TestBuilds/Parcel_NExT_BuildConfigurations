@@ -39,14 +39,8 @@ namespace Parcel.Neo.Base.Framework
             // Register entire (referenced) assemblies
             RegisterToolbox(toolboxAssemblies, "Generator", Assembly.Load("Parcel.Generators"));
             RegisterToolbox(toolboxAssemblies, "Vector", Assembly.Load("Parcel.Vector"));
-            RegisterToolbox(toolboxAssemblies, "Large Language Model", Assembly.Load("Parcel.LLM"));
-            RegisterToolbox(toolboxAssemblies, "In-Memory Database", Assembly.Load("Parcel.InMemoryDB"));
-            RegisterToolbox(toolboxAssemblies, "Database Service", Assembly.Load("Parcel.InMemoryDB.Integration"));
-            RegisterToolbox(toolboxAssemblies, "Database Application", Assembly.Load("Parcel.InMemoryDB.WebSurveys"));
             RegisterToolbox(toolboxAssemblies, "Yahoo Finance", Assembly.Load("Parcel.YahooFinance"));
-            RegisterToolbox(toolboxAssemblies, "MiniGames", Assembly.Load("Parcel.MiniGames"));
-            RegisterToolbox(toolboxAssemblies, "Document Model", Assembly.Load("Parcel.DocumentModel"));
-
+            
             // Index specific nodes
             Dictionary<string, ToolboxNodeExport?[]> toolboxes = IndexToolboxes(toolboxAssemblies);
             // Register front-end specific toolboxes (In general we try to eliminate those, or to say the least standardization effort is needed to make sure those are understood across implementations
@@ -65,16 +59,11 @@ namespace Parcel.Neo.Base.Framework
             RegisterType(toolboxes, "Boolean Logic", typeof(Standard.Types.BooleanRoutines));
             RegisterType(toolboxes, "Boolean Logic", typeof(Standard.Types.LogicRoutines));
             RegisterType(toolboxes, "File System", typeof(Standard.System.FileSystem));
-            // Register specific types - Auxiliary
-            RegisterType(toolboxes, "MiniGame (Legends)", typeof(Parcel.MiniGame.Legends.Actions.GameActions));
-            RegisterType(toolboxes, "MiniGame (Legends)", typeof(Parcel.MiniGame.Legends.Queries.Query));
             // Register specific types - directly borrow from libraries
-            RegisterType(toolboxes, "Collections", typeof(Enumerable));
             RegisterType(toolboxes, "Statistics", typeof(MathNet.Numerics.Statistics.Statistics)); // TODO: Might provide selective set of functions instead of everything; Alternative, figure out how to do in-app documentation
             RegisterType(toolboxes, "Statistics", typeof(MathNet.Numerics.Statistics.Correlation));
             // RegisterType(toolboxes, "String Processing", typeof(InflectorExtensions)); // TODO: Provide Humanizer equivalent functions in PSL string processing
             RegisterType(toolboxes, "Console", typeof(Standard.System.Console));
-            RegisterType(toolboxes, "Website Builder", typeof(Parcel.Framework.WebPages.WebPagesBuilder));
             // Remark: Notice that boolean algebra and String are available in PSL - Pending deciding whether we need dedicated exposure
 
             return toolboxes;
