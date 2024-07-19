@@ -13,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
-using Parcel.MiniGame.Legends.Actions;
 using Parcel.Neo.Base.Framework;
 using Parcel.Neo.Base.Framework.ViewModels;
 using Parcel.Neo.Base.Framework.ViewModels.BaseNodes;
@@ -142,14 +141,6 @@ namespace Parcel.Neo
                 }
                 else if (cache.DataType == typeof(DataColumn))
                     PreviewColumnData(cache.DataObject as Parcel.Types.DataColumn);
-                else if (cache.DataType == typeof(ActionResult))
-                {
-                    ActionResult? actionResult = cache.DataObject as ActionResult;
-                    if (actionResult.Image != null)
-                        PreviewImage(actionResult.Image);
-                    else
-                        PreviewPrimitives(actionResult.Message);
-                }
                 else
                 {
                     TestLabel = $"No preview is available for this node's output ({cache.DataObject})";
