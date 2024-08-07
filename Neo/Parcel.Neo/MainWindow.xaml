@@ -435,17 +435,6 @@
                 <MenuItem Header="Save As..."  Click="SaveCanvasAsMenuItem_Click"/>
                 <Separator Visibility="Collapsed"/>
                 <MenuItem Header="Import..." ToolTip="Import and insert a document into current graph." Visibility="Collapsed"/>
-                <MenuItem Header="Export" ToolTip="Export graph into various formats.">
-                    <MenuItem Header="Clean Chart (HTML)" Click="ExportCleanChartMenuItem_Click" Visibility="Collapsed"/>
-                    <MenuItem Header="PDF" Visibility="Collapsed"/>
-                    <MenuItem Header="Markdown" Visibility="Collapsed" ToolTip="Export current graph into a Markdown file."/>
-                    <MenuItem Header="SVG" Visibility="Collapsed" ToolTip="Export current graph into a vector image file."/>
-                    <MenuItem Header="PNG" Visibility="Collapsed" ToolTip="Export current graph into an image file."/>
-                    <MenuItem Header="Executable..." Click="ExportExecutableMenuItem_Click" Visibility="Collapsed" ToolTip="Export current document into an executable for the current platform."/>
-                    <MenuItem Header="C# Project..." Visibility="Collapsed" ToolTip="Export current graph into a C# project that can be compiled using dotnet SDK or Visual Studio."/>
-                    <MenuItem Header="Pure Script(s) (Pure 2)..." Click="ExportPureScriptsMenuItem_Click" ToolTip="Export current graph into Pure script(s)."/>
-                    <MenuItem Header="Python Script(s)..." Click="ExportPythonScriptsMenuItem_Click" ToolTip="Export current graph into python script(s)."/>
-                </MenuItem>
                 <Separator/>
                 <MenuItem Header="Close" ToolTip="Closes the application. At the moment it won't automatically save current document nor display a warning message before quitting."/>
             </MenuItem>
@@ -466,7 +455,6 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Live Code Preview" Click="ToggleLiveCodePreviewMenuItem_Checked" ToolTip="View generated C# code live."/>
                 <MenuItem Header="Console" Click="ToggleConsoleWindowMenuItem_Click" ToolTip="Toggles showing/hiding console window, which displays output messages from Print commands. Notice closing console window directly also closes the application."/>
                 <MenuItem x:Name="ShowNodesPaletteMenuItem" Header="Show Nodes Palette" IsCheckable="True" IsChecked="True" Checked="ShowNodesPaletteMenuItem_Checked" Unchecked="ShowNodesPaletteMenuItem_Unchecked" ToolTip="Toggle showing/hiding Nodes Palette, which allows drag-and-drop creation of nodes."/>
             </MenuItem>
