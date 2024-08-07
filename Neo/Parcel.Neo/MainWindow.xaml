@@ -459,16 +459,9 @@
                 <MenuItem x:Name="ShowNodesPaletteMenuItem" Header="Show Nodes Palette" IsCheckable="True" IsChecked="True" Checked="ShowNodesPaletteMenuItem_Checked" Unchecked="ShowNodesPaletteMenuItem_Unchecked" ToolTip="Toggle showing/hiding Nodes Palette, which allows drag-and-drop creation of nodes."/>
             </MenuItem>
             <MenuItem Header="Package">
-                <MenuItem Header="Load.." Click="LoadPackageMenuItem_Click" ToolTip="Load standard packages that come with distribution and not loaded by default."/>
-                <Separator/>
                 <MenuItem Header="Import" Click="ImportPackageMenuItem_Click" ToolTip="Import from local dll."/>
-                <MenuItem Header="Browse" Click="BrowsePackagesMenuItem_Click" ToolTip="Browse available packages (from both NuGet and Zora store). Can also download selected package."/>
-                <MenuItem Header="Download" Click="DownloadNamedPackageMenuItem_Click" ToolTip="Download named package directly."/>
                 <Separator/>
                 <MenuItem Header="Create Package..." Click="CreateScaffoldPackageMenuItem_Click" ToolTip="Create a new package."/>
-                <Separator Visibility="Collapsed"/>
-                <MenuItem Header="Re-Import" Click="ReimportPackageMenuItem_Click" ToolTip="Re-Import from local dll; Useful during development." Visibility="Collapsed"/>
-                <MenuItem Header="Compile &amp; Import" Click="CompileAndReImportPackageMenuItem_Click" ToolTip="(Re-)Import by compiling using dotnet from local package; Useful during development." Visibility="Collapsed"/>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="Manual" Visibility="Collapsed"/>

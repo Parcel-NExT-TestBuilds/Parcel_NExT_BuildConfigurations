@@ -358,26 +358,6 @@ namespace Parcel.Neo
             NodesPaletteSplitterColumn.Width = new GridLength(0);
             e.Handled = true;
         }
-        private void LoadPackageMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            string neoAssemblyPath = AssemblyHelper.ParcelNExTDistributionRuntimeDirectory;
-
-            Dictionary<string, string> additionalPackages = new()
-            {
-                { "Telegram", Path.Combine(neoAssemblyPath, "Parcel.Telegram.dll") },
-                { "Dashboard Builder", Path.Combine(neoAssemblyPath, "Parcel.DashboardApp.dll") },
-                { "Presentation Builder", Path.Combine(neoAssemblyPath, "Zora.SlidePresent.dll") },
-            };
-            ListEntryPickPromptDialog prompt = new(this, "Load Standard Package", "Pick package to load", additionalPackages.Keys.ToArray(), additionalPackages.Keys.First());
-            if (prompt.ShowDialog() == true)
-            {
-                string assemblyFile = additionalPackages[prompt.Value];
-                if (!File.Exists(assemblyFile))
-                    throw new ApplicationException($"Non-existing assembly: {assemblyFile}. (There are issues with the assumption of where standard packages are located)");
-                ToolboxIndexer.AddTools(assemblyFile);
-                UpdatePaletteToolboxes();
-            }
-        }
         private void ImportPackageMenuItem_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new()
@@ -391,22 +371,6 @@ namespace Parcel.Neo
                 ToolboxIndexer.AddTools(assemblyFile);
                 UpdatePaletteToolboxes();
             }
-        }
-        private void ReimportPackageMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void CompileAndReImportPackageMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-        private void BrowsePackagesMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void DownloadNamedPackageMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            // TODO: Consider merging this function into BrowsePackage window directly
         }
         private void CreateScaffoldPackageMenuItem_Click(object sender, RoutedEventArgs e)
         {

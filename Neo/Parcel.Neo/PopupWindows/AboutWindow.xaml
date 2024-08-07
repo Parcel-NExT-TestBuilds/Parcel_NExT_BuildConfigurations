@@ -20,7 +20,7 @@
                 <Image DockPanel.Dock="Left" Source="/Icon.png" Width="64" Margin="12"/>
                 <Label DockPanel.Dock="Top" Content="PV1 Neo" FontSize="22" HorizontalAlignment="Center" Margin="0" Padding="0"/>
                 <Label DockPanel.Dock="Top" Content="Methodox Technologies, Inc." HorizontalAlignment="Center" Margin="0" Padding="0" FontSize="8"/>
-                <Label DockPanel.Dock="Top" Content="Version: 0.5.0 Build v2024-08-02" HorizontalAlignment="Center" Margin="0" Padding="0" FontSize="8"/>
+                <Label DockPanel.Dock="Top" Content="Version: 0.5.0 Build v2024-08-07" HorizontalAlignment="Center" Margin="0" Padding="0" FontSize="8"/>
                 <Label DockPanel.Dock="Top" Content="A Parcel NExT Front-end (Graph Editor)." HorizontalAlignment="Center" Margin="0" Padding="0"  FontSize="8"/>
                 <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center" TextAlignment="Center" FontSize="8">
                     Written by
@@ -57,27 +57,18 @@
             <StackPanel Orientation="Vertical" Margin="0, 4">
                 <TextBlock Foreground="LightBlue" HorizontalAlignment="Center">
                     Website: 
-                    <Hyperlink NavigateUri="https://methodox.io/neo" RequestNavigate="Hyperlink_RequestNavigate">
+                    <Hyperlink NavigateUri="https://methodox.io" RequestNavigate="Hyperlink_RequestNavigate">
                         Official Methodox Page
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Foreground="LightBlue" HorizontalAlignment="Center">
-                    Packages Registry: 
-                    <Hyperlink NavigateUri="https://packmon.io" RequestNavigate="Hyperlink_RequestNavigate">
-                        Packmon
-                    </Hyperlink>
-                </TextBlock>
-                <TextBlock Foreground="LightBlue" HorizontalAlignment="Center">
                     Source Code: 
-                    <Hyperlink NavigateUri="https://github.com/Charles-Zhang-Parcel/PV1_Neo" RequestNavigate="Hyperlink_RequestNavigate">
+                    <Hyperlink NavigateUri="https://github.com/Parcel-NExT/Parcel_NExT" RequestNavigate="Hyperlink_RequestNavigate">
                         Github Repository
                     </Hyperlink>
                 </TextBlock>
                 <TextBlock Foreground="LightBlue" HorizontalAlignment="Center">
-                    License: 
-                    <Hyperlink NavigateUri="https://github.com/Charles-Zhang-Parcel/PV1_Neo/blob/main/LICENSE" RequestNavigate="Hyperlink_RequestNavigate">
-                        MIT License
-                    </Hyperlink>
+                    License: N/A
                 </TextBlock>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="0, 4, 0, 0">
