@@ -23,7 +23,6 @@
                     <Version>1.0.0</Version>
                     <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
                     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-                    <PublishReadyToRun>true</PublishReadyToRun>
                   </PropertyGroup>
 
                 </Project>
