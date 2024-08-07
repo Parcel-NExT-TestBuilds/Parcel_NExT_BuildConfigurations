@@ -416,23 +416,6 @@
                         <DataTemplate DataType="{x:Type viewModels:BaseConnector}">
                             <nodify:NodeInput/>
                         </DataTemplate>
-                        <DataTemplate DataType="{x:Type specialNodes:DatabaseTableInputConnector}">
-                            <nodify:NodeInput>
-                                <nodify:NodeInput.HeaderTemplate>
-                                    <DataTemplate DataType="{x:Type specialNodes:DatabaseTableInputConnector}">
-                                        <StackPanel Orientation="Horizontal" DataContext="{Binding Path=DataContext, 
-                                            RelativeSource={RelativeSource AncestorType={x:Type nodify:NodeInput},Mode=FindAncestor}}">
-                                            <TextBlock Text="{Binding Title}"
-                                           Margin="0 0 5 0" />
-                                            <TextBlock Text="Name"
-                                           Margin="0 0 5 0" />
-                                            <TextBox Text="{Binding TableName}"
-                                         PreviewKeyDown="PrimitiveInputTextbox_OnPreviewKeyDown_CommandOverride"></TextBox>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </nodify:NodeInput.HeaderTemplate>
-                            </nodify:NodeInput>
-                        </DataTemplate>
                     </ContentPresenter.Resources>
                 </ContentPresenter>
             </DataTemplate>
@@ -498,9 +481,6 @@
                 <Separator Visibility="Collapsed"/>
                 <MenuItem Header="Re-Import" Click="ReimportPackageMenuItem_Click" ToolTip="Re-Import from local dll; Useful during development." Visibility="Collapsed"/>
                 <MenuItem Header="Compile &amp; Import" Click="CompileAndReImportPackageMenuItem_Click" ToolTip="(Re-)Import by compiling using dotnet from local package; Useful during development." Visibility="Collapsed"/>
-            </MenuItem>
-            <MenuItem Header="Present">
-                <MenuItem Header="Start Presentation" Click="StartPresentationMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="Manual" Visibility="Collapsed"/>

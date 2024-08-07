@@ -63,10 +63,6 @@ namespace Parcel.Neo.Base.Toolboxes.Basic
             {
                 Tooltip = "Defines a dictionary mapping of keys to values."
             },
-            new("SQL Query", typeof(SQL)) // TODO: Pending deprecation.
-            {
-                Tooltip = "Defines a SQL query."
-            },
             null, // Divisor line // Graph Modularization
             new("Graph Input", typeof(GraphInput))
             {

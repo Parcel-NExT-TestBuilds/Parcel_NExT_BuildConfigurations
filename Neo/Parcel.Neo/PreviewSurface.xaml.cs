@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -14,13 +13,11 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
-using Parcel.MiniGame.Legends.Actions;
 using Parcel.Neo.Base.Framework;
 using Parcel.Neo.Base.Framework.ViewModels;
 using Parcel.Neo.Base.Framework.ViewModels.BaseNodes;
 using Parcel.Neo.Helpers;
 using Parcel.Types;
-using Zora.DomainSpecific.CGI;
 
 namespace Parcel.Neo
 {
@@ -173,23 +170,6 @@ namespace Parcel.Neo
                     PreviewDataGrid(cache.DataObject as Parcel.Types.DataGrid);
                 else if (cache.DataType == typeof(DataColumn))
                     PreviewColumnData(cache.DataObject as Parcel.Types.DataColumn);
-                // DSL: CGI
-                else if (cache.DataType == typeof(Model3D))
-                {
-                    Scene3D scene = Scene3D.CreateScene(cache.DataObject as Model3D);
-                    PreviewImage(scene.GetPreviewRender());
-                }
-                else if (cache.DataType == typeof(Scene3D))
-                    PreviewImage((cache.DataObject as Scene3D).GetPreviewRender());
-                // DSL: P9 Game
-                else if (cache.DataType == typeof(ActionResult))
-                {
-                    ActionResult? actionResult = cache.DataObject as ActionResult;
-                    if (actionResult.Image != null)
-                        PreviewImage(actionResult.Image);
-                    else
-                        PreviewPrimitives(actionResult.Message);
-                }
                 // Fallback
                 else
                 {

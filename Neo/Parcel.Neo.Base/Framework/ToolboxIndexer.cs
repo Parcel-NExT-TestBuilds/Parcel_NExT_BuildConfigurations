@@ -9,12 +9,6 @@ using Parcel.NExT.Interpreter.Types;
 using Parcel.CoreEngine.Service.Interpretation;
 using System.Numerics;
 using System.Drawing;
-using Zora.DomainSpecific.CGI;
-using ProjectNine.Tooling.Generative;
-using Parcel.Types;
-using Zora.DomainSpecific.Music;
-using Zora.GUI.Feature;
-using Zora.Framework;
 
 namespace Parcel.Neo.Base.Framework
 {
@@ -54,32 +48,14 @@ namespace Parcel.Neo.Base.Framework
             // Register entire (referenced) assemblies
             RegisterToolbox(toolboxAssemblies, "Generator", Assembly.Load("Parcel.Generators"));
             RegisterToolbox(toolboxAssemblies, "Vector", Assembly.Load("Parcel.Vector"));
-            RegisterToolbox(toolboxAssemblies, "Large Language Model", Assembly.Load("Parcel.LLM"));
-            RegisterToolbox(toolboxAssemblies, "In-Memory Database", Assembly.Load("Parcel.InMemoryDB"));
-            RegisterToolbox(toolboxAssemblies, "Database Service", Assembly.Load("Parcel.InMemoryDB.Integration"));
-            RegisterToolbox(toolboxAssemblies, "Database Application", Assembly.Load("Parcel.InMemoryDB.WebSurveys"));
             RegisterToolbox(toolboxAssemblies, "Yahoo Finance", Assembly.Load("Parcel.YahooFinance"));
-            RegisterToolbox(toolboxAssemblies, "MiniGames", Assembly.Load("Parcel.MiniGames"));
-            RegisterToolbox(toolboxAssemblies, "Document Model", Assembly.Load("Parcel.DocumentModel"));
-            RegisterToolbox(toolboxAssemblies, "Static Report", Assembly.Load("Zora.StaticReport"));
             // Index toolbox nodes
             Dictionary<string, ToolboxNodeExport?[]> toolboxes = IndexToolboxes(toolboxAssemblies);
 
             // Register front-end specific toolboxes (In general we try to eliminate those, or to say the least standardization effort is needed to make sure those are understood across implementations
             AddToolbox(toolboxes, "Basic", new BasicToolbox());
-            // Register DSL specific toolbox - 3D Modeling
-            RegisterType(toolboxes, "3D Modeling", typeof(Model3D));
-            RegisterType(toolboxes, "3D Modeling", typeof(Scene3D));
-            // Register DSL specific toolbox - Music
-            RegisterType(toolboxes, "Fluent Synth", typeof(ProceduralMusic));
-            // Register DSL specific toolbox - Procedural Planet
-            RegisterType(toolboxes, "Procedural Planet", typeof(ProceduralPlanet));
             // Register DSL specific types - Image processing
             RegisterType(toolboxes, "Image Processing", typeof(Types.Image));
-            // Register DSL specific types - Video processing
-            RegisterType(toolboxes, "Video Processing", typeof(Processing.VideoProcessing));
-            // Register DSL specific types - Data Processing
-            RegisterType(toolboxes, "Data Processing", typeof(Expresso));
             // Register specific types - Parcel "Standard"
             RegisterType(toolboxes, "Plotting", typeof(Parcel.Graphing.Plot));
             RegisterType(toolboxes, "Plotting", typeof(Parcel.Graphing.MakeConfigurations));
@@ -87,37 +63,21 @@ namespace Parcel.Neo.Base.Framework
             RegisterType(toolboxes, "Plotting", typeof(Parcel.Graphing.DrawHelper));
             RegisterType(toolboxes, "Data Grid", typeof(Types.DataGrid));
             RegisterType(toolboxes, "Data Grid", typeof(Types.DataGridOperationsHelper));
-            RegisterType(toolboxes, "Data Grid", typeof(Integration.DataGridIntegration));
-            RegisterType(toolboxes, "Data Grid", typeof(Integration.DataProcessingHelper));
             RegisterType(toolboxes, "Math", typeof(Processing.Utilities.Calculator));
             // Register specific types - The Real Parcel Standard
-            RegisterType(toolboxes, "Programming", typeof(Standard.Programming.ControlFlow));
-            RegisterType(toolboxes, "Programming", typeof(Standard.Programming.InputHelpers));
             RegisterType(toolboxes, "String Processing", typeof(Standard.Types.StringRoutines));
             RegisterType(toolboxes, "Boolean Logic", typeof(Standard.Types.BooleanRoutines));
             RegisterType(toolboxes, "Boolean Logic", typeof(Standard.Types.LogicRoutines));
             RegisterType(toolboxes, "File System", typeof(Standard.System.FileSystem));
-            // Register specific types - Experimental
-            RegisterType(toolboxes, "Fictional World", typeof(ProjectNine.FictionalWorld.DataSet)); // "Project Nine" name should generally not be exposed directly; We use "Fictional World" in this case to refer to it.
-            // Register specific types - Auxiliary
-            RegisterType(toolboxes, "MiniGame (Legends)", typeof(Parcel.MiniGame.Legends.Actions.GameActions));
-            RegisterType(toolboxes, "MiniGame (Legends)", typeof(Parcel.MiniGame.Legends.Queries.Query));
             // Register specific types - directly borrow from libraries
             RegisterType(toolboxes, "Types", typeof(Vector2));
             RegisterType(toolboxes, "Types", typeof(Size));
-            RegisterType(toolboxes, "Collections", typeof(Enumerable)); // System.Linq
             RegisterType(toolboxes, "Statistics", typeof(MathNet.Numerics.Statistics.Statistics)); // TODO: Might provide selective set of functions instead of everything; Alternative, figure out how to do in-app documentation
             RegisterType(toolboxes, "Statistics", typeof(MathNet.Numerics.Statistics.Correlation));
             // RegisterType(toolboxes, "String Processing", typeof(InflectorExtensions)); // TODO: Provide Humanizer equivalent functions in PSL string processing
             RegisterType(toolboxes, "Console", typeof(Standard.System.Console));
-            RegisterType(toolboxes, "Website Builder", typeof(Parcel.Framework.WebPages.WebPagesBuilder));
             // Remark: Notice that boolean algebra and String are available in PSL - Pending deciding whether we need dedicated exposure
-            // Register specific types - Everyday essential
-            RegisterType(toolboxes, "News", typeof(Zora.Services.NewsReader));
-            RegisterType(toolboxes, "Public APIs", typeof(Zora.Services.PublicAPI));
-            // Register specific types - Features/Annotations
-            RegisterType(toolboxes, "Presentation", typeof(PresentationMaker));
-
+            
             return toolboxes;
         }
         #endregion

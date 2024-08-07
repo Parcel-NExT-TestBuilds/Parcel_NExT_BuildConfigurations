@@ -84,7 +84,7 @@ namespace Parcel.Neo.PopupWindows
         }
         private void UpdateSearch(string searchText)
         {
-            Assembly[] ignoreAssemblies = [typeof(Parcel.MiniGame.Legends.Actions.ActionResult).Assembly, typeof(Parcel.MiniGame.PuzzleGame).Assembly];
+            Assembly[] ignoreAssemblies = [];
             _searchResultLookup = [];
             SearchResults = new ObservableCollection<SearchResult>(_availableNodes
                 .Where(n => n.Key.Descriptor == null || !ignoreAssemblies.Contains(n.Key.Descriptor.Method.DeclaringType.Assembly)) // Ignore games

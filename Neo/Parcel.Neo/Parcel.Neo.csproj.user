@@ -8,9 +8,6 @@
     <Compile Update="PopupWindows\ActionEventPickerWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PopupWindows\PresentationWindow.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="PreviewSurface.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -32,9 +29,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PopupWindows\CreateFunctionWindow.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="PopupWindows\PresentationWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="PreviewSurface.xaml">
