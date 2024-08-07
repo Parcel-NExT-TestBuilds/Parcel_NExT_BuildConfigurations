@@ -43,6 +43,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Parcel.NExT\CoreEngines\Parcel.NExT.Interpreter\Parcel.NExT.Interpreter.csproj" />
     <ProjectReference Include="..\..\Parcel.NExT\Packages\Parcel.Image\Parcel.Image.csproj" />
+    <ProjectReference Include="..\..\Parcel.NExT\Utilities\Stewer\Stewer.csproj" />
     <ProjectReference Include="..\Parcel.Neo.Base\Parcel.Neo.Base.csproj" />
   </ItemGroup>
 
